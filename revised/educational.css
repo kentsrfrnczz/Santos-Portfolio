@@ -1,0 +1,197 @@
+/* ====== GLOBAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+  font-size: 14px; /* smaller base font */
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #1f1f1f;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+.highlight {
+  color: #c9c9c9;
+}
+
+/* ====== NAVIGATION ====== */
+.nav-bar ul {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+  color: white;
+  border-bottom: 2px solid #c9c9c9;
+  padding-bottom: 2px;
+}
+
+/* ====== MAIN SECTION ====== */
+main {
+  padding: 30px 15px;
+}
+
+/* Title */
+.education h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+  color: #222;
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* ====== EDUCATION CONTAINER ====== */
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* ====== EDUCATION BOX ====== */
+.edu-box {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.edu-box:nth-child(2) { animation-delay: 0.15s; }
+.edu-box:nth-child(3) { animation-delay: 0.3s; }
+
+.edu-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* SCHOOL TITLES */
+.edu-box h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.50rem;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+.edu-box p {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+/* SCHOOL PHOTO */
+.edu-photo {
+  width: 100%;
+  max-width: 180px;
+  margin-top: 10px;
+  border-radius: 83px;
+  filter: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-box:hover .edu-photo {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ====== FOOTER NAV BUTTONS ====== */
+footer.footer-nav {
+    position: fixed;
+    right: 20px;     /* align to right */
+    bottom: 20px;    /* keep bottom spacing */
+    left: auto;      /* remove centering */
+    display: flex;
+    justify-content: flex-end; /* align items to the right */
+    gap: 20px;
+    padding: 0;
+    z-index: 10;
+}
+
+/* Buttons */
+footer.footer-nav .nav-btn {
+    padding: 18px 36px;
+    background: #333;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+footer.footer-nav .nav-btn:hover {
+    background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+
+/*scroll*/
+html, body {
+    overflow: hidden;
+    height: 100%;
+}

@@ -1,0 +1,231 @@
+/* ====== GLOBAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #1f1f1f;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+.highlight {
+  color: #c9c9c9;
+}
+
+/* ====== NAVIGATION ====== */
+.nav-bar ul {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+  color: white;
+  border-bottom: 2px solid #c9c9c9;
+  padding-bottom: 2px;
+}
+
+/* ====== MAIN ====== */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.achievements-section h2{
+  font-family: PlayFair-Display;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  font-size: 3.5rem;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+/* ====== ACHIEVEMENTS GRID ====== */
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* slightly smaller cards */
+  gap: 280px;
+  padding: 0 10px;
+  justify-items: center;
+  align-items: end;
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Achievement Cards */
+.achievement-card {
+  border-radius: 15px;
+  background: #fff;
+  width: 700px;
+  padding: 38px;          /* slightly reduced padding */
+  min-height: 150px;      /* slightly smaller height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  position: relative;
+  border-left: 5px solid #1f1f1f;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Icons and Titles */
+.achievement-card i {
+  font-size: 1.5rem;
+  color: #1f1f1f;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.achievement-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.achievement-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Year */
+.year {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: auto;
+}
+
+/* Hover: expand card and show description */
+.achievement-card:hover {
+  transform: scale(1.03);  /* slightly smaller scale on hover */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  border-left-color: #c9c9c9;
+}
+
+.achievement-card:hover p {
+  max-height: 180px;      /* slightly less max-height */
+  opacity: 1;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .achievements-container {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .achievements-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .achievement-card {
+    min-height: 120px;
+    padding: 12px;
+  }
+}
+
+
+/* ====== FOOTER NAV BUTTONS ====== */
+footer.footer-nav {
+    position: fixed;
+    right: 20px;     /* align to right */
+    bottom: 20px;    /* keep bottom spacing */
+    left: auto;      /* remove centering */
+    display: flex;
+    justify-content: flex-end; /* align items to the right */
+    gap: 20px;
+    padding: 0;
+    z-index: 10;
+}
+
+/* Buttons */
+footer.footer-nav .nav-btn {
+    padding: 18px 36px;
+    background: #333;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+footer.footer-nav .nav-btn:hover {
+    background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+
+/*scroll*/
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+/* ====== FLOAT ANIMATION ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
